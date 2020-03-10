@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Core JavaScript</title>
+        <script type="text/javascript">
+       
+            var x = 9999947597498746; // sometimes give right answer 
+            x=x+1                      //sometimes wont -498748
+           // if (x == x + 1)
+            //alert(x);//returns same integer without incrementing
+
+            var x;
+            document.write("typeof(undefined)---------"+typeof(undefined))
+            var y=null;
+            document.write("<br>typeof(null)-----------------",typeof(null))
+            document.write("<br>null==undefined -----------",null==undefined)
+            document.write("<br>typeof(function ab(){}----"+typeof(function ab(){}))
+
+           //<!--
+             // if  javaScript is not available in any broweser 
+             //so this will be commented as of html comments
+            //-->
+
+            // DecimalDigits.(DecimalDigits)(Exponent)
+            // .DecimalDigits(Exponent)
+            // DecimalDigits(Exponent)
+            // In plain English, this means that all of the following are valid ways to specify numbers:
+            // 10
+            // 177.5
+            // -2.71
+            // .333333e77
+            // -1.7E12
+            // 3.E-5
+            // 128e+100
+            document.write("<br>Number.POSITIVE_INFINITY:-----| "+Number.POSITIVE_INFINITY);
+            document.write("<br>Number.NEGATIVE_INFINITY:--- |",Number.NEGATIVE_INFINITY);
+            document.write("<br>Number.MAX_VALUE:- ------------",Number.MAX_VALUE);
+            document.write("<br>Number.MIN_VALUE:- -----",Number.MIN_VALUE);
+            document.write("<br>Number.NaN:------------------ ",Number.NaN,"<br>");
+
+            </script>
+            <noscript>
+                <em>Either your browser does not support JavaScript or it
+                is currently disabled.</em>
+            </noscript>
+                
+    </head>
+    <body>
+        hi<a href="javascript: alert('hello I am a pseudo-URL script');">Click
+            to invoke</a>
+    </body>
+</html>

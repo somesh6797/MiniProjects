@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>Chapter6 objects</title>
+    </head>
+    <body>
+
+        
+        enter the name <input type="text" name="" id="ipName"><br>
+        enter the Addr <input type="text" name="" id="ipAddr" ><br>
+        <button onclick="getCust()">click</button><br>
+
+    </body>
+    <script>
+
+        //prototype chaining --> giving object to prototype
+
+        // this is first constructor
+        SRobot.prototype.Rname="Default Name";
+        function SRobot(Rname)
+        {
+            this.Rname=Rname//here (this) refers to  current object
+            this.showname=function()
+            {
+                alert(Rname);
+            }
+
+            /*function nameshow()
+            {
+                alert(Rname);
+            }*/
+        }
+        
+
+        var Robo1=new SRobot();//has own space in memory
+        var Robo2=new SRobot("somesh2");//has own space in memory
+
+        Robo1.showname();//robo1 is of type SRobot 
+        //Robo1.nameshow();//this is member of SRobot but cant be accessible
+        Robo2.showname()
+
+
+        // this is another constructor
+
+        function UltraRobot(extraFeature)
+        {
+            if (extraFeature)
+            this.feature = extraFeature;
+        }
+        UltraRobot.prototype = new SRobot();//this is same like inheritance
+        //ultraRobot contain his props while UltraRobot.prop contains SRobots props
+   
+        //UltraRobot.prototype.showname();//can access all members of srobot
+
+        UltraRobot.prototype=new String("hi");
+        document.write(UltraRobot.prototype)
+
+
+        //creating object of UltraRobot
+        var ULRobot=new UltraRobot();
+
+        //ULRobot.showname();
+
+        
+
+        String.prototype.get3Char=function()
+        {                   //we can use charAt() instead
+            alert(this[2]);// any string object or literal
+        }                  //we called with will be stored into this
+
+        //"somesh".get3Char();
+        //ch="0123";
+        //ch.get3Char();
+       
+        //objects as associative arrays
+        var surNames=new Object();
+        surNames["somesh"]="randive";//this is called key value pair or objects as associative arrays
+    
+        var Customer=new Object();
+        
+        //alert(Customer[name]);
+        function getCust()
+        {
+        var name=document.getElementById("ipName").value;
+        var addr=document.getElementById("ipAddr").value;
+        Customer[name]=addr;
+           alert(+Customer[name]);
+        }
+        
+        
+        // object Literal
+        var robot1={
+                name:"Robo1",
+                model:"m70",
+                attack:{
+                    kick:function(){alert("dhush")},
+                    hand:function(){alert("chop")}
+                    }
+                 }
+                 //robot1.attack.hand();
+                 //robot1.attack.kick();
+        var str1 = new String("abc");
+        var str2 = new String("abc"); 
+        document.write(str1==str2,"<br>");
+        var str1 = new String("a");// for comparision operators  like(<,<=>,>=) 
+        var str2 = new String("b");// operator itself converts its operands to primitive type 
+        document.write(str1<=str2,"<br>");// The equality relational operator doesn’t do this
+        myString=new String("this the string");//because you might actually want to compare references.
+        myString.example="Not necessary<br>";
+        document.write(myString.example);
+        //delete myString.example;
+        document.write("heres now myString.example is deleted thats why--",myString.example);
+        //alert(myString["toUpperCase"]());
+        prop="";
+        for (prop in myString)
+          document.write(prop,"=",myString[prop],"<br>");
+    </script>
+    
+</html>
+
+
+
+<!-- <html>
+    <head>
+        <script >
+            function nows()
+            {
+            confirm("Script 3 ran");
+            var a=ab();//var a,b=ab();not possible
+            alert("then"+a);
+            }
+            function ab()
+            {
+                ad=10;
+                abd=10;
+                return (10+"10");//multiple return not possible
+            }
+       
+        </script>
+    </head>
+    <body>
+    <button onclick="nows()">click</button>  
+
+    <a href="../errors/noscript.html"onclick="
+    alert('hello I am a pseudoURLscript');
+    return false;" >Click to invoke</a>
+    
+    </body>
+</html>

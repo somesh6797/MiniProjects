@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>JSfunctions</title>
+        <script>
+
+        var x = 5;
+        function x()
+        {
+        alert("I'm a function!");
+        }
+        //alert(typeof x);//number
+        
+        document.write("<br>The function is created as the script is parsed,"+
+                     " while the variable gets created as the script runs<br>");
+
+
+        //Objects with Object constructor
+        var a1=new Object();
+        
+        function myFun()
+        {
+            var sum=0;
+        if(myFun.arguments.length>1)
+        {
+            document.write("arguments sent to this function (myFun) is")
+            for(i=0;i<myFun.arguments.length;i++)
+            {
+            sum=sum+myFun.arguments[i];//myFun.length
+            document.write(myFun.arguments[i],",");
+            }
+            document.write("<br>this many arguments sent to this (myFun) function ---",myFun.arguments.length,"<br>sum is:-",sum);
+            document.write("<br>myFun.arguments.length used while calling ");
+            document.write("<br>myFun.length used in function definition <br>");
+        }
+        
+        }
+        myFun(1,2,3,4,5,6,7,8,9,1);//myFun.arguments.length
+        //objects with Constructor function
+        function Robot(name)
+        {
+            this.name=name;
+           // alert(name);
+            this.info=function()
+            {
+            document.write("<br>the name of this robot is:--",name,"<br>");
+            }
+            document.write("<br>this statement get executed whenever a new Robot gets created<br>");
+            
+        }
+        
+        var a=new Robot("chitti");
+        a.info();
+        
+        
+        
+        //Function Literals
+        var funLiteral=function()
+        {
+        document.write("This Function is called with function Literal "+
+        " funLiteral=function(){}<br>"+ " also called as anonymous function<br>");
+        }
+        funLiteral();
+        //object FUnction    
+        var funVar=new Function("arg","document.write('This is Function oject and it has argument--arg=',arg);");
+        funVar(89);
+
+        var x="global"
+        function myFunction()
+        { //global x is not available here as new var x is here
+           // first it checks in the local context  and then move outside
+        document.writeln("<br>The value of x before initialization in myFunctionis: ", x);
+        var x = "Hullo there!";
+        document.writeln("<br>The value of x after initialization in myFunction is: ", x,"<br>");
+        }
+        myFunction();
+
+            function simpleFunction()
+            {
+                document.write("This is simple function in JavaScript");
+            }
+            simpleFunction();
+        </script>
+    </head>
+</html>
