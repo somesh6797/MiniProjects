@@ -1,0 +1,94 @@
+
+   #h1
+   {
+    text-align: center;
+    font-size:73; 
+    color: rgb(256, 12, 0);
+    background-color: rgb(133, 22, 22);
+    font-family:broadway;
+   }
+   span{
+      color:rgb(225, 255, 53);
+      font-family: rockwell;
+      background-color: black;
+  }
+#login{
+   color: azure;
+   border: 7px solid ;
+   font-size: 30px;
+   text-align: right;
+}
+   /* #div1
+   {
+      float: left;
+      clear: both;
+   }
+   #div2
+   {
+      float: right;
+      clear: both;
+   }
+   
+   #Container
+   {
+      clear: both;
+   } */
+   
+   button
+   {
+      font-size: 25px;
+      font-family:'Gill Sans MT';
+      width: 170;
+      height:70;
+      color:rgb(255, 255, 255);
+      border-radius: 6px;
+      border:0px;
+      background-color: crimson;
+      box-shadow: -1.5px 8px 0.8px rgb(170, 9, 9);
+      
+   }
+   
+   button:active
+   {
+      box-shadow: -2px 3px rgb(128, 40, 40);
+      transform:translatey(8px);     
+   }
+  
+   p
+   {
+      text-align: center;      
+   }
+   h1
+   {
+      background-color:rgb(136, 238, 224);  
+   }
+   
+   body
+   {
+      background-image:url("download.png");
+      background-repeat: repeat-y;
+      background-size:1580px 1150px;
+      background-position-x: center;
+      background-position-y:50px;
+   }
+   label
+   {
+      color: rgb(97, 250, 255);
+   }
+   
+   #bg-d
+   {
+      float:left;
+   }
+   
+   #hc-d
+   {
+      margin-left: 0px;
+      text-align: center;
+   }
+   
+   #hbc-d
+   {
+      float:right;
+   }
+   

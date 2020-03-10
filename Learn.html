@@ -1,0 +1,235 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="Find.css">
+    <title>Leanring JS</title>       
+  </head>
+
+  <input type="text" id="myInput">
+  <button onclick= "setTm()">setItem</button><br><br>
+  <button onclick="getTm()">getItem</button>
+  <p id="ppp">hi</p>
+
+  <script>
+
+    function setTm()
+    {
+      newItem=[89,8909,7657]
+      textval=document.getElementById("myInput").value;
+      newItem.push(textval);
+     localStorage.setItem("myItem",newItem);
+    }
+    
+ function getTm()
+  {
+   
+    var ttt=[]
+    var t3=localStorage.getItem("myItem");
+    ttt.push(t3);
+     document.getElementById("ppp").innerHTML=ttt;
+  }
+  with(document)
+  {
+    
+   write("<p id =\"first\"><br>document.write(\"5\"+5) :-"); write("55"+5+"<br><br>");
+   write("document.write(55+'5') :-");      write(55+"5"+"<br><br>");
+   write("document.write(55-\"5\") :-");    write(55-"5"+"<br><br>");
+   write("document.write(\"55\"-\"5\") :-");write("55"-"5"+"<br><br>");
+   write("document.write(\"5\"*\"5\") :-"); write("5"*"5"+"<br><br>");
+   write("document.write(5 *\"5\") :-");    write(5*"5"+"<br><br>");
+   write("document.write(a*5) :-");         write("a" * 5 + "<br><br>");
+   write("page was last modified on----"+document.lastModified+"<br></p>");
+   
+   var arr=[1,2,3,'h'];
+   write("<br><p id=\"second\">"+arr+"<br>");
+   delete arr[2];
+   write(arr);
+   arr=[1,2,3,4,5,6,7,8];
+   arr.length=0;
+   write("<br>after setting length =0 arr is(just space ) :-" + arr );
+   arr.length=6;
+   write("<br>after setting length =6 arr is(just 5 commas ) :-" + arr +"<br>"+"<br></p>");
+    
+      
+    var stack = []; // []
+    stack.push("first"); // ["first"]
+    write("<br><p id=\"stack\">stack.push(\"first\");----|"+stack+"<br>");
+    stack.push(10, 20); // ["first", 10, 20]
+    write("stack.push(10, 20);-----|"+stack+"<br>");
+    var popped=stack.pop(); // ["first", 10] Returns 20
+    write("var popped=stack.pop();-|"+stack+"<br>");
+    stack.push(2); // ["first", 10, 2]
+    write("stack.push(2);----------|"+stack+"<br>");
+    stack.pop(); // ["first", 10] Returns 2
+    write("stack.pop();------------|"+stack+"<br>");
+    stack.pop(); // ["first"] Returns 10
+    write("stack.pop();------------|"+stack+"<br>");
+    stack.pop(); // [] Returns "first"
+    write("stack.pop();------------|"+stack+"<br></p>");
+
+
+  var myArray = [345, 78, 2];
+  myArray.unshift(4,"fun");//unshift(elements,..) adds elements befor the list
+  write(myArray+"<br>");
+
+//use push() and shift() to simulate a queue. 
+write("<p id=\"que\">");
+var queue = [];
+write("var queue = [];"+queue+"<br><br>");
+queue.push("first", 10); // ["first", 10]
+write("queue.push(\"first\", 10);-|"+queue+"<br><br>");
+queue.shift(); // [10] Returns "first" //pops elements from the list from start like queue
+write("queue.shift()------------|;"+queue+"<br><br>");
+queue.push(20); // [10, 20]
+write("queue.push(20);----------|"+queue+"<br><br>");
+queue.shift(); // [20] Returns 10
+write("queue.shift();-----------|"+queue+"<br><br>");
+queue.shift(); // [] Returns 20
+write("queue.shift();-----------|"+queue+"<br><br></p>");
+
+
+//concat() Method
+//concat() does not modify the content of the array
+write("concatenation :-<br>")
+write(arr.concat("new","elements<br>"));
+
+var myArray = ["red", "green", "blue"];
+myArray.concat("pink", ["purple", "black"]);
+// Returns ["red", "green", "blue", "pink", "purple", "black"]
+myArray.concat("white", ["gray", ["orange", "magenta"]]);
+// Returns ["red", "green", "blue", "white", "gray", ["orange","magenta"]]
+
+//join also does not modify the content of the array
+var myArray = ["red", "green", "blue"];
+write("br>");
+var myArray = myArray.join(" color ");
+write(myArray);
+
+    }
+
+
+  </script>
+
+
+
+  <body id="body">    
+    <p class="cl">this is p1</p>
+    <p>this is p2</p>
+    <p class="cl">this is p3</p>
+    <p>this is p4</p>
+    <p>this is p5</p>
+    <a class="cl" href="#">This is anchor tag</a><br><br>
+    <button onclick="changer()"style="background-color : red ; width:60 ;height:40">change to Red</button>
+    <button onclick="changeb()"style="background-color :cyan ; width:60 ;height:40">change to Blue</button>
+    <button onclick="changec()"style="width:120 ;height:40">change 1st 3rd and anchor tag</button><br>
+    <img id="im" src="Tiee.png"width="90" height="90" onmouseover="newImg()" onmouseout="oldImg()"><br><br><br>
+    <form onsubmit="false">
+    <input id="ip1" placeholder="Enter Name" >
+    <button onclick="validate()" id="btn">Validate</button>
+    </form>
+    <h1>The form should be made for bank account;s</h1>
+    <h1>Indentation of all the text or contents</h1>
+
+    
+    <label for="background-color">choose color</label>
+    <input id ="bgc"type="color"onchange="setc()"><br>
+    <!--<button id="bb" onclick="setc()">set background color</button id="bb">-->
+    <select name="ip" id="ip">
+
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+    </select><br><br>
+   <button onclick="newlmnt()">create button Element</button>
+
+   <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+
+<p>Click the button to remove the first item from the list.</p>
+
+<button onclick="remlist()">Try it</button>
+
+<button onclick="">Cars Objectst</button>
+
+
+  </body>
+</html>
+    
+<script>
+
+  
+function remlist() 
+{
+  var list = document.getElementById("myList");
+  list.removeChild(list.childNodes[0]);
+}
+      function newlmnt()
+      {
+         var img = document.createElement("img"); 
+         img.setAttribute("src","congrats.gif");
+         document.body.appendChild(img);
+      }
+     function setc()
+     {
+       col=document.getElementById("bgc").value;
+       document.getElementById("body").style.background=col;
+       //or
+        document.body.style.background=col;
+     }
+
+     function validate()
+     {
+      
+       var name=document.getElementById("ip1").value;
+       var regxp=/[0-9]sam/;
+       if(regxp.test(name))
+       {
+         alert("Done");
+       }
+       else{        
+         var l=document.getElementById("btn");
+         l.style.background="red";
+         l.style.color="white";
+         alert("No no");
+         
+       }
+     }
+
+     function newImg()
+     {
+       document.getElementById("im").src="Tie.png";
+     }
+
+
+     function oldImg()
+     {
+        document.getElementById("im").src="Tiee.png";
+     }
+
+    function changer()
+    {
+        var para=document.getElementsByTagName("p");
+         for(var i=0;i<para.length;i++)
+           {
+               para[i].style.color="red";
+           }
+    }
+    function changeb()
+    {
+        var para=document.getElementsByTagName("p");
+         for(var i=0;i<para.length;i++)
+           {
+               para[i].style.color="cyan";
+           }
+    }
+
+    function changec()
+    {
+        var clas=document.getElementsByClassName("cl");
+        for(var i=0;i<clas.length;i++)
+        {
+            clas[i].style.color="red";
+        }
+    }
+   
+
+</script>
+

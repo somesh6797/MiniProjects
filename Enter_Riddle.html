@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Enter_Riddle</title>
+        <link rel="stylesheet" href="Enter_Rid.css">
+        <h1 id="h1" >
+            Guess the Word <span onclick="window.location.href='GuessGame.html'" id ="login">Home</span><br> ----
+        </h1>
+        <body>
+            <div style="text-align: center;">
+                <form action="">
+                        <h1 style="color: beige">Enter multiple Riddle by separating by comma</h1>   
+            <p id="p">
+             
+            <span>Enter the Riddle&nbsp;&nbsp;</span><br>
+            <textarea name="" id="riddleInput" cols="22" rows="3"></textarea><br><br>
+            <span>Enter the Answer </span><br>
+            <input type="text" id="riddleAns"><br><br>
+            <input id="ipBtn" type="submit" value="submit" onclick="save_rid()">
+            </p>
+        </form>
+        </div>
+        </body>
+    </head>
+</html>
+<script>
+var Riddle=[];    
+var Answer=[];
+
+function save_rid()
+{
+    RIP=document.getElementById("riddleInput");
+    RANS=document.getElementById("riddleAns");
+    if(RIP.value !="" && RANS.value !="")
+    {
+    Riddle.push(RIP.value);
+    Answer.push(RANS.value.toLowerCase());
+    //alert(document.getElementById("TA").value);
+    localStorage.setItem("QData",Riddle);
+    localStorage.setItem("AnsData",Answer);   
+    }
+    else
+    {
+        alert("Fill the TextBoxes");
+    }
+}
+
+
+</script>

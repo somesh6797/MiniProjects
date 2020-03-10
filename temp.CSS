@@ -1,0 +1,45 @@
+#Container
+{
+	width: 1000px;
+	height:800px;
+	border:1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	margin-top:auto;
+	clear:both;
+	position: center;
+	background-color:grey;
+	
+}
+
+
+#Rent,#Find
+{
+	text-align:center;	
+	width: 300px;
+	height:300px;
+	border:1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	margin-top:200px;
+	
+}
+#Find
+{
+	float:left
+}
+#Rent
+{
+	float:right
+}
+
+
+
+#Find,#rent a
+{
+	font-family:Courier new;
+	font-size:60px;
+	
+}

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+  <title>
+    College Rooms
+  </title>
+  <link rel="Stylesheet" type="text/css" href="C:\Webpages\temp.css" />
+</head>
+ 
+<body>
+ 
+  <div id="Container">
+    <div id="rent"><a href=" ">Offer/<br />Rent the Room</a></div>
+    <div id="Find"><a href=" ">Find<br /> the<br /> Room</a></div>
+  </div>
+  <input id ="ip1" placeholder ="enter anything">
+
+  <button id ="btn1 "onclick="fn1()"> check if number </button> 
+  <br>
+  <br>
+  <br>
+
+  <select id="drbox"> 
+	<option value="somesh">somesh</option>
+	<option value="umesh">umesh</option>
+	<option value="arati">arati</option>
+</select> 
+<button id ="btn2 "onclick="fn2()"> check if number </button> <br><br><br><br>
+<img src="Cal.png" width="300"height="300"onmouseover="chang()"  onmouseout="ol()" id="img">
+</body>
+
+</html>
+
+<script>
+function ol()
+{
+	document.getElementById("img").src="Cal.png";
+}
+function chang()
+{
+	var x=document.getElementById("img");
+	x.src="gmail.png";
+	x.width="100";
+	x.height="100"
+	
+	
+}
+
+function fn1()
+{
+	var select=document.getElementById("ip1")
+	alert(select.value);
+}
+function fn2()
+   {
+	var select=document.getElementById("drbox")
+       alert(select.options[select.selectedIndex].value);
+}
+   
+
+</script>
+
+<style>
+    #Container
+{
+	width: 1000px;
+	height:800px;
+	border:1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	margin-top:auto;
+	clear:both;
+	position: center;
+	background-color:rgb(245, 202, 10);
+	
+}
+
+
+#Rent,#Find
+{
+	text-align:center;	
+	width: 300px;
+	height:300px;
+	border:1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	margin-top:200px;
+	
+}
+#Find
+{
+	float:left
+}
+#Rent
+{
+	float:right
+}
+
+
+
+#Find,#rent a
+{
+	font-family:Courier new;
+	font-size:60px;
+	
+}
+</style>

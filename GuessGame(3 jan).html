@@ -1,0 +1,92 @@
+<html>
+    <body >      
+       <h1 style="text-align: center; font-size:100; 
+        color: rgb(255, 123, 0);">
+       Guess the Word Game
+       </h1>
+       <br><br><br><br>
+       <div>
+          <button id="startbtn " onclick="start()" >Let The Game Begin</button>
+          <br><br><br><br>       
+          <input id="ip"style="width:700;height:100;
+          font-family:Franklin Gothic;font-size: 20px;">
+          <br>
+          <button onclick="checks()" >Check</button><br>
+       </div>
+       <div style="height:300; border: 20px solid rgb(12, 187, 231);">
+         <p id="x" >
+         </p>
+       </div>
+    </body>
+</html>
+
+
+<style>
+
+button {
+    font-size: 34px;
+    font-family:'Gill Sans MT';
+    width: 200;
+    height:100;
+    color:crimson;
+}
+
+div{
+   text-align: center;
+}
+body,h1{
+   background-color:rgb(136, 238, 224);
+}
+</style>
+
+
+
+
+
+<script>
+
+    var desc=["the first letter in the character set","the 14th letter in the alphabets","the 26th letter in the alphabets"];
+    var word=['a','b','c']
+    var i=0;
+    var dcc;
+    function start()
+    {
+      alert(desc[i])
+      dcc=i;
+      i++;
+      
+    }   
+    
+
+   function checks()
+     {
+
+         var ans=document.getElementById("ip").value;
+         
+        for(m=0;m<word.length;m++)
+           {
+         if(word.indexOf(ans)==dcc)
+           {
+               yes=true;
+               break;
+           }
+        else{
+            yes=false;
+            }
+        
+       }
+        if(yes==true)
+           {
+            document.getElementById("x").innerHTML="yoooo!! you guessed correct <br> that's my boy ";
+            document.getElementById("x").
+            style="font-size:90px; color:rgb(9, 72, 167)";
+           }
+        else
+           {        
+            document.getElementById("x").innerHTML="Sorry!!! you guessed wrong";
+            document.getElementById("x").
+            style="font-size:90px; color:rgb(9, 72, 167)";
+           }
+
+     }
+</script>

@@ -1,0 +1,225 @@
+<html>
+   <head>      
+      <title>Riddles</title>
+      <link rel="stylesheet" href="GuessGame.css">
+   </head>
+
+   <body> 
+      <div id="Conainer">
+         <div id="div1">
+          <h1 id="h1" >
+          Guess the Word <span onclick="window.location.href='Enter_Riddle.html'" id ="login">login</span> <br> ----
+         
+          </h1> 
+          </div> 
+          <div id="div2">
+               <a href="Enter_Riddle.html"><button>login</button></a> 
+         </div>     
+      
+      <!-- <textarea name="" id="txt" cols="" rows=""
+      style="resize:vertical;height:auto;width:800;margin-left:10%;margin-right:10%">
+     </textarea>  -->
+      <!--<div style="resize: horizontal;border:2px solid #f0ff1b;height:300;overflow:auto"></div> -->
+
+      <p>          
+         <button id="startbtn"  class="button" onclick="start()"> Show The riddle </button>
+         <br><br><br>
+         <input id="ip"style="width:500;height:100;font-family:Gill Sans MT,
+         Franklin Gothic;font-size: 20px;font-size:40" onclick="dont()">         
+         <br><br>
+         <button  class="button" onclick="checks()" >Check</button>
+         <button  class="button" onclick="showAns()" >Show Answer</button><br> 
+      </p>
+      <div>
+         <p id="x"></p>
+      </div>
+      
+      <div style="text-align: center;">
+         <button onclick="setTm()">Clear localStorage</button>
+         <button onclick="getTm()">Get local StorageItem</button>   
+         
+      </div>
+
+       <!-- <div id="bg-d">
+         <label style="width:700;height:100;
+         font-family:rockwell "for="background-color; ">choose <br> bg-color
+         </label><br>
+         //input color from color pallete for body back ground color
+         <input id ="bgc"type="color"onchange="setbg()"/>
+         <br>
+  
+      </div>
+  
+      <div id="hc-d">
+           <label style="width:700;height:100;
+           font-family:rockwell ">choose hed <br>text-color
+           </label><br>
+           //input color from color pallete for h1 text color
+           <input id ="hc"type="color"onchange="sethc()"><br>
+      </div>
+      
+  
+      <div id="hbc-d">
+           <label style="width:700;height:100;
+           font-family:rockwell "for="background-color">choose hed<br>back-color
+           </label><br>
+           
+           <input id ="hbc"type="color"onchange="sethbc()"/>//input color from color
+           <br>   // Color pallete for h1 background
+      </div>-->
+   </div>
+   </body>
+</html>
+
+
+
+<script>
+var desc=["The first letter in the Alphabets","the 14th letter in the alphabets","the 26th/last letter in the alphabets"];
+var word=['a','n','z'];
+var i=0;
+var dcc;
+var btn_click=0;//for validation of input box
+img = document.createElement("img");
+
+
+function showAns()
+{
+   if(btn_click!=0 && word.length>i)  //riddles count is greater than 
+   {
+   document.getElementById("ip").value=word[i];
+   i++;
+   btn_click=0;
+   showAnsBtn=true;
+   }
+}
+   
+
+riddleStoring();
+
+function riddleStoring()
+{
+   var Que=localStorage.getItem("QData");//Que is String for NOw
+   var Ansr=localStorage.getItem("AnsData");
+   Que=Que.split(",");   // Separating it where Comma appears
+   Ansr=Ansr.split(",");
+   //document.getElementById("ppp").innerHTML=VarStr;
+   // document.getElementById("Temp").innerHTML=desc;
+   // document.getElementById("Temp2").innerHTML=word;
+   for(itr=0;itr<Que.length;itr++)
+    {
+   desc.push(Que[itr]); //or without index can also work well //Sending all The comma separated String into array desc
+   word.push(Ansr[itr]);
+    }
+}
+
+function dont()
+{
+if(i<=0 && btn_click==0)
+   alert("first read the riddle");
+}
+
+function setTm()
+{
+   localStorage.clear();
+}
+
+function getTm()  //it is possible localStorage may work just Like stack
+{
+   var abc=localStorage.getItem("AnsData")
+   alert(abc);
+}
+
+
+//start() Let the Game begin
+function start()                                  
+
+{
+document.getElementById("ip").value="";
+btn_click=1;//now we can click on the answer input box  
+dcc=i; //counter that hold value of i i.e. currently what riddle no is running 
+if (desc.length >i)
+   {
+   alert((i+1)+"th) "+desc[i]);
+   //i++;
+   document.getElementById("x").innerHTML="";
+   }
+else
+   {
+   document.getElementById("x").
+   style="font-size:50px; font-family: courier;background:crimson; color:rgb(200, 299, 299)";
+   document.getElementById("x").innerHTML="Riddles ended";
+   alert("Riddles ended");
+   }
+img.remove(); 
+}   
+    
+
+function checks()
+{
+   btn_click=0;
+   img.remove();
+var ans=document.getElementById("ip").value.trim();//this is for spacees to be removed automatically
+ans=ans.toLowerCase(); 
+if(ans=="")
+   {
+   alert("Enter Somesthing that should be the answer ")  
+   }  
+else 
+{
+   if(word.indexOf(ans)==dcc)
+      {
+      document.getElementById("x").innerHTML="yoooo!! you guessed correct <br> that's my boy ";
+      document.getElementById("x").                 //make a function here
+      style="font-size:50px; font-family: courier;background:crimson; color:rgb(200, 299, 299)";//to reduce code
+      img = document.createElement("img");//creates new img tag  
+      img.setAttribute("src","congrats.gif");//set img src attribute
+      img.setAttribute("width","40%");
+      img.setAttribute("height","400");
+      img.setAttribute("style","margin-left:30%; margin-right:30%;");
+      document.body.appendChild(img); // adds it to the Document 
+      if(showAnsBtn!=true)
+      {
+         showAnsBtn=false;
+         i++;
+      }
+      
+      }
+   else
+      {
+      document.getElementById("x").innerHTML="ha!! ha!! <br> Sorry!!! you guessed wrong";
+      document.getElementById("x").
+      style="font-size:50px; font-family: courier;background:crimson; color:rgb(200, 299, 299)";
+      img = document.createElement("img"); 
+      img.setAttribute("src","timmy.gif");
+      img.setAttribute("width","40%");
+      img.setAttribute("height","300");
+      img.setAttribute("style","margin-left:30%; margin-right:30%;");
+      document.body.appendChild(img);         
+      }
+      
+   }
+}//function for inpu color elements
+
+
+
+// function setbg()
+// {
+//   var col=document.getElementById("bgc").value;
+//   document.body.style.background=col;
+//   //or document.body.style.background=col;
+// }
+
+
+// function sethbc()
+// {
+//   var col=document.getElementById("hbc").value;
+//   document.getElementById("h1").style.backgroundColor = col;
+// }
+
+// function sethc()
+// {
+//   var col=document.getElementById("hc").value;
+//   document.getElementById("h1").style.color = col;
+// }
+
+</script>

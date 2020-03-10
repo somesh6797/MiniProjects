@@ -1,0 +1,44 @@
+<button>Moving</button>
+
+
+<style>
+
+button
+{
+ top:200px
+ }
+</style>
+
+
+<script type="text/javascript"> 
+var canvas =document.getElementById('Canvas_T'); 
+var context = canvas.getContext('2d');
+// image of the top balloon 
+var imgObj1 = new Image(); 
+// image of the secondballoon 
+var imgObj2 = new Image(); 
+var i = 0; 
+var j = 1; 
+var x; 
+var y; 
+//function for the movement 
+function circ() 
+{ 
+    i = i + j; 
+    if (i == 400) 
+    { 
+        j =-1; 
+        } 
+        if (i == 0) 
+        { 
+            j = 1; 
+            } 
+            context.clearRect(0, 0, 500, 400); 
+            x = i; 
+            y =Math.round(100 + 15 * Math.sin(i * Math.PI / 180));
+            context.drawImage(imgObj1, x, y); 
+            imgObj1.src = '../images/hot.png';
+            context.drawImage(imgObj2, x, y + 180); 
+            imgObj2.src = '../images/hot1.png'; 
+            }
+</script>
