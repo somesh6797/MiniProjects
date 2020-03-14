@@ -1,10 +1,56 @@
 <html>
     <head>
         <title>Learning CSS</title>
-        <link rel="stylesheet" href="standard.css" title="standard">
-        <link rel="alternate stylesheet" href="orange.css" title="Happy Halloween">        
+        <!-- <link rel="stylesheet" href="standard.css" title="standard"> -->
+        <!-- <link rel="alternate stylesheet" href="orange.css" title="Happy Halloween">         -->
     </head>
-    <body>
-        hi
+    <body >
+       
+        <p class="a b">
+            hi
+        </p>
+        <div class="container">
+            <div class="item"style="order:3;">A</div>
+            <div class="item" style="line-height:9;order:1;">B</div>
+            <div class="item" style="order:4;">C</div>
+            <div class="item" style="order:2;">D</div>
+            <!-- <div class="item">E</div>
+            <div class="item">F</div>
+            <div class="item">G</div>
+            <div class="item">H</div>
+            <div class="item">I</div>
+            <div class="item">J</div> -->
+        </div>
     </body>
 </html>
+
+<style>
+    /* Learning the selectors */
+    /* .a{
+        background-color: rgb(255, 153, 0); 
+    }
+    .b{
+        color:blueviolet;
+    } */
+
+    .container
+        {
+        background-color: aqua;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content:space-around;        
+        align-items: baseline;/* center */        
+        }
+
+    .item
+        {
+        color:white;
+        background: green; 
+        font-size: 25px;
+        width:70px;
+        line-height:50px;       
+        margin: 30px;
+        text-align: center;
+        }
+</style>
